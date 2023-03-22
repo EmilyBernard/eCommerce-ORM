@@ -5,5 +5,5 @@
 
 
 ## Acknowledgements
-all activity files from week 13
-stackoverflow re oneToMany {through}
+all activity files and mini-challenge from week 13
+stackoverflow re. oneToMany {through}
