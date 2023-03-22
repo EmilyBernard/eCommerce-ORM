@@ -129,21 +129,15 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   // delete one product by its `id` value
-  Product.destroy(
-    {
-      // Gets the product based on the id given in the request parameters
-      where: {
-        id: req.params.id,
-      },
-    }
-  )
-    .then((deletedProduct) => {
-      // Sends the updated category as a json response
-      res.json(deletedProduct);
-    })
-    .catch((err) => res.json(err));
+  const categoryData = await Category.destroy({
+    where: {
+      id: req.params.id,
+    },
+  });
+
+  return res.json(categoryData);
 });
 
 module.exports = router;
