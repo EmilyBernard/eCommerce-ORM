@@ -1,2 +1,9 @@
 # eCommerce-ORM
-test remote github
+
+
+
+
+
+## Acknowledgements
+all activity files from week 13
+stackoverflow re oneToMany {through}
