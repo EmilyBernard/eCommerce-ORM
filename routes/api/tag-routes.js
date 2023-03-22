@@ -39,23 +39,11 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   // create a new tag
-  Tag.create({
-    name: req.body.tag_name,
-    id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      primaryKey: true,
-    },
-  })
-    .then((newTag) => {
-      // Send the newly created row as a JSON object
-      res.json(newTag);
-    })
-    .catch((err) => {
-      res.json(err);
-    });
+  const tagData = await Tag.create(req.body);
+
+  return res.json(tagData);
 });
 
 router.put('/:id', async (req, res) => {
@@ -76,26 +64,16 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   // delete one tag by its `id` value
-  Tag.destroy(
-    {
-      // The field you can delete and the data attached to the request body.
-      id: req.body.id,
-      tag_name: req.body.name,
-    },
-    {
-      // Gets the tag based on the id given in the request parameters
-      where: {
-        id: req.params.id,
-      },
-    }
-  )
-    .then((deletedTag) => {
-      // Sends the updated tag as a json response
-      res.json(deletedTag);
-    })
-    .catch((err) => res.json(err));
+const tagData = await Tag.destroy({
+  where: {
+    id: req.params.id,
+  },
 });
+
+return res.json(tagData);
+});
+
 
 module.exports = router;
