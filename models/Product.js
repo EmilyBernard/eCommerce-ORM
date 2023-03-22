@@ -1,7 +1,4 @@
-const { DECIMAL } = require('sequelize');
-const { NUMERIC } = require('sequelize');
 const { Model, DataTypes } = require('sequelize');
-const { toDefaultValue } = require('sequelize/types/lib/utils');
 const sequelize = require('../config/connection');
 
 class Product extends Model {}
@@ -20,7 +17,7 @@ Product.init(
       allowNull: false,
     },
     price: {
-      type: DataTypes.DECIMAL,
+      type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
       validate: {
         isDecimal: true
@@ -29,7 +26,7 @@ Product.init(
     stock: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      toDefaultValue: "10", 
+      toDefaultValue: 10, 
       validate: {
         isNumeric: true
       }
