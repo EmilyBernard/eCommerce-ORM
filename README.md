@@ -1,6 +1,12 @@
 # eCommerce-ORM
 
 
+## GitHub & Walkthrough Video
+https://drive.google.com/file/d/16_dY53zBgsOJa74eEl55F9CJ4C1fGj8F/view
+https://github.com/EmilyBernard/eCommerce-ORM
+
+
+
 
 
 
