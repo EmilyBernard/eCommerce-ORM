@@ -11,7 +11,7 @@ SO THAT my company can compete with other e-commerce companies
 - [Installation](#installation)
 - [Usage](#usage)
 - [Links](#links)
-- [Acknoledgements](#acknowledgements)
+- [Acknowledgements](#acknowledgements)
 
 
 
